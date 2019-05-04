@@ -1,5 +1,5 @@
-export default class RootStore {
+export class RootStore {
     constructor () {
-        
+
     }
 }

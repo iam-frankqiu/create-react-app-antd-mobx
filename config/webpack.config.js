@@ -43,6 +43,16 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+function generateAliasByDirName (arr) {
+  const alias = {}
+  arr.forEach(name => {
+    alias[name] = path.resolve(__dirname, `../src/${name}`)
+  });
+  return alias
+}
+
+
+const alias = generateAliasByDirName(['api', 'pages', 'components', 'layouts', 'stores', 'utils'])
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
@@ -273,6 +283,8 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        // 'stores': path.resolve(__dirname, '../src/stores'),
+        ...alias
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
