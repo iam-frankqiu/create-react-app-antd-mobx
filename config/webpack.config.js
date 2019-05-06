@@ -102,7 +102,8 @@ module.exports = function(webpackEnv) {
           // Necessary for external CSS imports to work
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
-          plugins: () => [
+          plugins: (loader) => [
+            require('postcss-import')({ root: loader.resourcePath }),
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
@@ -366,6 +367,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  ["import", { "libraryName": "antd", "style": "css" }]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
