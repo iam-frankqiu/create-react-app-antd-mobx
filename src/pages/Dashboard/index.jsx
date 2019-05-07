@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { BasicLayout } from "layouts";
+import { BasicLayout } from '../../layouts'
 
 export default class Dashboard extends Component {
   render() {
     return (
-      // <BasicLayout>
+      <BasicLayout>
         <div></div>
-      // </BasicLayout>
+      </BasicLayout>
     )
   }
 }

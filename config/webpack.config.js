@@ -52,7 +52,7 @@ function generateAliasByDirName (arr) {
 }
 
 
-const alias = generateAliasByDirName(['api', 'pages', 'components', 'layouts', 'stores', 'utils'])
+const alias = generateAliasByDirName(['api', 'pages', 'components', 'layouts', 'stores', 'utils', 'asserts'])
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {

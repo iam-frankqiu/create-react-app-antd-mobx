@@ -1,10 +1,11 @@
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Icon } from 'antd';
 import React from 'react'
-import {Header, SiderMenu} from 'components';
+import {SiderMenu} from 'components';
+import {Header} from '../Header'
 
 const { Content } = Layout;
 
-export default class BasicLayout extends React.Component {
+export class BasicLayout extends React.Component {
   state = {
     collapsed: false,
   };
@@ -18,18 +19,25 @@ export default class BasicLayout extends React.Component {
   render() {
     return (
       <Layout>
-          {/* <SiderMenu
-            {...this.props}
-          /> */}
+          <SiderMenu
+          trigger={null}
+          collapsible
+          collapsed={this.state.collapsed}
+        ></SiderMenu>
         <Layout>
-          {/* <Header style={{ background: '#fff', padding: 0 }}>
+        <Header style={{ background: '#fff', padding: 0 }}>
+            <Icon
+              className="trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
           </Header>
           <Content style={{
-            margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280,
+            margin: '24px 16px', padding: 24, background: '#fff', minHeight: '100vh',boxSizing: 'border-box'
           }}
           >
             {this.props.children}
-          </Content> */}
+          </Content>
         </Layout>
       </Layout>
     );
