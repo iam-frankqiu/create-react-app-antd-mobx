@@ -1,5 +1,8 @@
 /* @import '../node_modules/antd/lib/style/themes/default.less'; */
 
+html {
+  --antd-wave-shadow-color: #f0f2f5;
+}
 body {
   margin: 0;
   padding: 0;

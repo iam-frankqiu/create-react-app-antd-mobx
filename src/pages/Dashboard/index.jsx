@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { BasicLayout } from '../../layouts'
+import { BasicLayout } from 'layouts'
 
-export default class Dashboard extends Component {
+export class Dashboard extends Component {
   render() {
     return (
       <BasicLayout>
